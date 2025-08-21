@@ -2,7 +2,6 @@ import requests
 import time
 
 
-# トップ記事のIDを取得
 def get_top_news_ids(limit=30):
     url = "https://hacker-news.firebaseio.com/v0/topstories.json"
     try:
@@ -13,7 +12,6 @@ def get_top_news_ids(limit=30):
         return []
 
 
-# 記事情報を取得
 def get_story_id(story_id):
     url = f"https://hacker-news.firebaseio.com/v0/item/{story_id}.json"
     try:
@@ -24,7 +22,6 @@ def get_story_id(story_id):
         return {}
 
 
-# 記事を表示
 def display_story(story):
     title = story.get("title")
     link = story.get("url", "")
